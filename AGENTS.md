@@ -6,9 +6,10 @@ Guidance for AI coding agents working in this repository.
 
 A standalone static marketing site for Heritage Bay Plumbing Inc., built
 with React 18 + Vite 6 + React Router + Tailwind CSS + shadcn/ui. It is
-**not** connected to any backend or third-party platform — it was originally
-generated with Base44 and has since been fully de-integrated (no Base44
-packages, no Base44 auth, no Base44-hosted assets).
+**not** connected to any backend or third-party platform — it started as a
+generated export from a low-code app builder and has since been fully
+de-integrated (no builder SDK packages, no builder-hosted auth, no
+builder-hosted assets — everything lives in this repo).
 
 ## Commands
 
