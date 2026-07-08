@@ -1,90 +1,86 @@
 import React from 'react';
 import { Phone, Mail, Clock, Shield } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
-import ContactForm from '@/components/contact/ContactForm';
-import AppointmentBooking from '@/components/contact/AppointmentBooking';
 import { useScrollAnimation } from '@/lib/useScrollAnimation';
 
-function ContactInfo() {
+function ContactCard({ icon: Icon, label, value, sublabel, href }) {
+  const [ref, isVisible] = useScrollAnimation(0.2);
+
   return (
-    <div className="flex flex-col gap-5 mb-10">
-      <a href="tel:+18058726302" className="flex items-center gap-4 group">
-        <div className="w-12 h-12 bg-amber/10 rounded-lg flex items-center justify-center shrink-0">
-          <Phone className="w-5 h-5 text-amber" />
-        </div>
-        <div>
-          <p className="text-amber text-xl font-heading group-hover:text-amber-hover transition-colors">(805) 872-6302</p>
-          <p className="text-white/40 text-xs">Primary</p>
-        </div>
-      </a>
-
-      <a href="mailto:jmurray@heritagebayplumbing.com" className="flex items-center gap-4 group">
-        <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
-          <Mail className="w-5 h-5 text-white/60" />
-        </div>
-        <p className="text-white/80 text-sm font-bold group-hover:text-amber transition-colors break-all">jmurray@heritagebayplumbing.com</p>
-      </a>
-
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
-          <Clock className="w-5 h-5 text-white/60" />
-        </div>
-        <div>
-          <p className="text-white/80 text-sm font-bold">Monday – Friday</p>
-          <p className="text-white/50 text-sm">7:00 AM – 5:00 PM</p>
-        </div>
+    <a
+      ref={ref}
+      href={href}
+      className={`group flex items-center gap-5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber/50 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
+      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber/20 group-hover:scale-105 transition-all duration-300">
+        <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-amber" />
       </div>
-
-      <div className="flex items-center gap-3 p-4 bg-amber/10 rounded-lg border border-amber/20 mt-1">
-        <Shield className="w-5 h-5 text-amber shrink-0" />
-        <p className="text-amber text-sm font-semibold">UA Signatory · UA Local 403 · San Luis Obispo, CA</p>
+      <div className="min-w-0">
+        <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1.5">{label}</p>
+        <p className="text-white text-xl sm:text-2xl font-heading leading-tight group-hover:text-amber transition-colors break-words">
+          {value}
+        </p>
+        {sublabel && <p className="text-white/40 text-sm mt-1.5">{sublabel}</p>}
       </div>
-    </div>
-  );
-}
-
-function SectionHeader({ label, title }) {
-  return (
-    <div className="mb-8">
-      <span className="text-xs font-bold tracking-[0.2em] uppercase text-white/30 mb-2 block">{label}</span>
-      <h2 className="text-2xl font-heading text-white">{title}</h2>
-    </div>
+    </a>
   );
 }
 
 export default function Contact() {
+  const [infoRef, infoVisible] = useScrollAnimation(0.2);
+
   return (
     <>
       <PageHero
         title="Let's Talk About Your Project"
-        subtitle="Call, email, or fill out the form — we respond fast."
+        subtitle="Tap to call or email — we respond fast."
         breadcrumb="Contact"
       />
 
-      {/* Contact info strip */}
-      <section className="bg-navy border-b border-white/10 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ContactInfo />
-        </div>
-      </section>
-
-      {/* Two-column: Quote + Calendar */}
       <section className="bg-navy py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-5 mb-6">
+            <ContactCard
+              icon={Phone}
+              label="Call Us"
+              value="(805) 872-6302"
+              sublabel="Primary Line"
+              href="tel:+18058726302"
+            />
+            <ContactCard
+              icon={Mail}
+              label="Email Us"
+              value={<>jmurray@<wbr />heritagebayplumbing.com</>}
+              href="mailto:jmurray@heritagebayplumbing.com"
+            />
+          </div>
 
-            {/* Request a Quote */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <SectionHeader label="Project Inquiry" title="Request a Quote" />
-              <ContactForm />
+          <div
+            ref={infoRef}
+            className={`grid grid-cols-1 sm:grid-cols-2 gap-5 transition-all duration-700 ${
+              infoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
+                <Clock className="w-5 h-5 text-white/60" />
+              </div>
+              <div>
+                <p className="text-white/80 text-sm font-bold">Monday – Friday</p>
+                <p className="text-white/50 text-sm">7:00 AM – 5:00 PM</p>
+              </div>
             </div>
 
-            {/* Book Appointment */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <SectionHeader label="Schedule a Visit" title="Book an Appointment" />
-              <AppointmentBooking hideTitle />
+            <div className="flex items-center gap-4 bg-amber/10 border border-amber/20 rounded-2xl p-6">
+              <div className="w-12 h-12 bg-amber/10 rounded-lg flex items-center justify-center shrink-0">
+                <Shield className="w-5 h-5 text-amber" />
+              </div>
+              <p className="text-amber text-sm font-semibold leading-snug">
+                UA Signatory · UA Local 403 · Licensed & Insured
+              </p>
             </div>
-
           </div>
         </div>
       </section>
