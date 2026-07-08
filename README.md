@@ -28,13 +28,11 @@ src/
   components/
     layout/       Navbar, Footer, Layout, floating call button
     home/         Home page sections (hero, stats, showcase, etc.)
-    contact/      Contact form + appointment booking widgets
     services/     Service detail blocks
     shared/       Reusable PageHero / CTASection
     ui/           shadcn/ui primitives
   lib/
     images.js     Central image registry (see "Images" below)
-    submitLead.js Contact form submit handler (see "Contact forms" below)
   pages/          Home, Services, Gallery, About, Contact
 ```
 
@@ -47,19 +45,26 @@ that registry rather than hardcoding `/images/...` paths, so the site keeps
 working when hosted at a subpath (e.g. GitHub Pages project sites at
 `/<repo-name>/`).
 
-## Contact forms
+## Contact
 
-`ContactForm`, `AppointmentBooking`, and `GetInTouch` all submit through
-`src/lib/submitLead.js`, which currently only logs to the console — **this
-site has no backend, so form submissions do not go anywhere yet.** Before
-relying on these forms to capture real leads, wire `submitLead` up to a form
-backend such as [Formspree](https://formspree.io/), Netlify Forms, EmailJS,
-or a custom API endpoint.
+The Contact page is intentionally just tap-to-call / tap-to-email cards plus
+hours and licensing info — there is no lead-capture form and no backend.
+(`src/lib/submitLead.js` is a leftover no-op stub from an earlier version of
+the page; nothing currently renders a form that calls it.)
 
 ## Deployment
 
-Every push to this branch builds the site and publishes it to the `gh-pages`
-branch via `.github/workflows/deploy.yml`. See that workflow for details
-(base path, SPA fallback, `.nojekyll`). GitHub Pages must be configured once
-in the repo settings to serve from the `gh-pages` branch — see the PR/setup
-notes for exact steps.
+This repo is set up to deploy two ways:
+
+- **GitHub Pages** (current hosting): every push to this branch builds the
+  site and publishes it to the `gh-pages` branch via
+  `.github/workflows/deploy.yml`, which builds with a `/<repo-name>/` base
+  path for GitHub's project-site subpath hosting. GitHub Pages must be
+  configured once in the repo settings to serve from the `gh-pages` branch.
+- **Netlify** (for handing the site off to someone hosting it themselves):
+  `netlify.toml` at the repo root sets the build command (`npm run build`),
+  publish directory (`dist`), and the SPA redirect rule needed so direct
+  links to non-root routes (e.g. `/services`) don't 404. Netlify auto-detects
+  this file — connecting the repo (or dragging a built `dist/` folder into
+  Netlify) needs no manual configuration. Netlify serves from the domain
+  root, so no base-path flag is needed there (unlike the GitHub Pages build).
