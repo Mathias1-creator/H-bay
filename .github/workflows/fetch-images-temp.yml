@@ -1,0 +1,64 @@
+name: Fetch legacy images (temporary)
+
+# One-off helper to pull the site's images out of the old hosting provider
+# and commit them into the repo. Delete this workflow once that's done —
+# it is not part of the site's ongoing CI.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Download images
+        run: |
+          set -euo pipefail
+          mkdir -p public/images
+
+          declare -A IMAGES=(
+            ["heritage-bay-logo.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/7002f38c9_logo.png"
+            ["hero-commercial-plumbing-construction.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/bd1736191_generated_75ee8e44.png"
+            ["services-plumbing-overview.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/94da63a2e_generated_a07f8e28.png"
+            ["multi-family-plumbing.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/85dedb749_generated_2298cf01.png"
+            ["renovation-tenant-improvement.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/ea2b96d22_generated_0966f11a.png"
+            ["industrial-plumbing.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/194180ea3_generated_67f037b0.png"
+            ["about-hero-background.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/befd8f26b_generated_4d66bc3f.png"
+            ["aerial-site-view.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/2000b9e67_generated_ba323c71.png"
+            ["new-construction-plumbing.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/7f6358c64_generated_e4f05526.png"
+            ["project-drain-line-installation.jpg"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/d2b499e73_7fb6245b-1cb9-4094-8878-bcba9aca4d92.jpg"
+            ["project-sewer-trench-commercial.jpg"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/c2e52ea0c_56672c32-cccc-430a-b822-6c487b983980.jpg"
+            ["project-industrial-overhead-piping.jpg"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/3ab76654c_b25a4a94-d979-4161-ab66-5e15636d8517.jpg"
+            ["project-industrial-equipment-yard.jpg"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/328b2c904_5c2c30e8-e359-458b-976b-e063dcf0372a.jpg"
+            ["project-underground-sewer-new-construction.jpg"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/22f214e26_IMG_04911.jpg"
+            ["project-underground-water-main.jpg"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/1d7436984_Resized_20240622_144806.JPG"
+            ["gallery-detail.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/7b6fc4443_generated_e5a7e5b6.png"
+            ["team-on-site.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/37c6335c5_generated_f65cf7a6.png"
+            ["finish-plumbing.png"]="https://media.base44.com/images/public/6a0104838014bf83659ef839/e4fbcd500_generated_3b984d8f.png"
+          )
+
+          for name in "${!IMAGES[@]}"; do
+            url="${IMAGES[$name]}"
+            echo "Downloading $name"
+            curl -fSL --connect-timeout 15 --max-time 60 --retry 3 -o "public/images/$name" "$url"
+          done
+
+          ls -la public/images
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/images
+          if git diff --cached --quiet; then
+            echo "No image changes to commit"
+            exit 0
+          fi
+          git commit -m "Add site images fetched from legacy hosting"
+          git push origin HEAD:${{ github.ref_name }}
