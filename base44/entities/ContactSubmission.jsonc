@@ -1,0 +1,75 @@
+{
+  "name": "ContactSubmission",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Full name of the contact"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "project_type": {
+      "type": "string",
+      "enum": [
+        "New Construction",
+        "Renovation & Tenant Improvement",
+        "Industrial",
+        "Multi-Family",
+        "Not Sure"
+      ],
+      "description": "Type of project"
+    },
+    "project_location": {
+      "type": "string",
+      "description": "Project location"
+    },
+    "project_description": {
+      "type": "string",
+      "description": "Detailed project description"
+    },
+    "preferred_contact": {
+      "type": "string",
+      "enum": [
+        "Phone",
+        "Email"
+      ],
+      "description": "Preferred contact method"
+    },
+    "project_timeline": {
+      "type": "string",
+      "enum": [
+        "Immediate",
+        "Within 3 Months",
+        "3-6 Months",
+        "Planning Phase"
+      ],
+      "description": "Project timeline"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "in_progress",
+        "closed"
+      ],
+      "default": "new",
+      "description": "Submission status"
+    }
+  },
+  "required": [
+    "full_name",
+    "phone",
+    "email"
+  ]
+}
