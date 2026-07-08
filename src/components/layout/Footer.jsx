@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, Clock } from 'lucide-react';
+import { IMAGES } from '@/lib/images';
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <img
-                src="https://media.base44.com/images/public/6a0104838014bf83659ef839/7002f38c9_logo.png"
+                src={IMAGES.logo}
                 alt="Heritage Bay Plumbing"
                 style={{ height: '56px', width: 'auto', mixBlendMode: 'screen' }}
               />

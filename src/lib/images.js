@@ -1,20 +1,26 @@
-// Central image registry — replace URLs with client photos when available
+// Central image registry — replace with client photos when available.
+// All images live in public/images/ and are served relative to BASE_URL so
+// this works whether the site is hosted at a domain root or a subpath
+// (e.g. GitHub Pages project sites at /<repo-name>/).
+const img = (filename) => import.meta.env.BASE_URL + "images/" + filename;
+
 export const IMAGES = {
-  hero: "https://media.base44.com/images/public/6a0104838014bf83659ef839/bd1736191_generated_75ee8e44.png",
-  servicesPlumbing: "https://media.base44.com/images/public/6a0104838014bf83659ef839/94da63a2e_generated_a07f8e28.png",
-  multiFamily: "https://media.base44.com/images/public/6a0104838014bf83659ef839/85dedb749_generated_2298cf01.png",
-  renovation: "https://media.base44.com/images/public/6a0104838014bf83659ef839/ea2b96d22_generated_0966f11a.png",
-  industrial: "https://media.base44.com/images/public/6a0104838014bf83659ef839/194180ea3_generated_67f037b0.png",
-  aboutHero: "https://media.base44.com/images/public/6a0104838014bf83659ef839/befd8f26b_generated_4d66bc3f.png",
-  aerial: "https://media.base44.com/images/public/6a0104838014bf83659ef839/2000b9e67_generated_ba323c71.png",
-  newConstruction: "https://media.base44.com/images/public/6a0104838014bf83659ef839/7f6358c64_generated_e4f05526.png",
-  project1: "https://media.base44.com/images/public/6a0104838014bf83659ef839/d2b499e73_7fb6245b-1cb9-4094-8878-bcba9aca4d92.jpg",
-  project2: "https://media.base44.com/images/public/6a0104838014bf83659ef839/c2e52ea0c_56672c32-cccc-430a-b822-6c487b983980.jpg",
-  project3: "https://media.base44.com/images/public/6a0104838014bf83659ef839/3ab76654c_b25a4a94-d979-4161-ab66-5e15636d8517.jpg",
-  project4: "https://media.base44.com/images/public/6a0104838014bf83659ef839/328b2c904_5c2c30e8-e359-458b-976b-e063dcf0372a.jpg",
-  project5: "https://media.base44.com/images/public/6a0104838014bf83659ef839/22f214e26_IMG_04911.jpg",
-  project6: "https://media.base44.com/images/public/6a0104838014bf83659ef839/1d7436984_Resized_20240622_144806.JPG",
-  galleryDetail: "https://media.base44.com/images/public/6a0104838014bf83659ef839/7b6fc4443_generated_e5a7e5b6.png",
-  teamOnSite: "https://media.base44.com/images/public/6a0104838014bf83659ef839/37c6335c5_generated_f65cf7a6.png",
-  finishPlumbing: "https://media.base44.com/images/public/6a0104838014bf83659ef839/e4fbcd500_generated_3b984d8f.png",
+  logo: img("heritage-bay-logo.png"),
+  hero: img("hero-commercial-plumbing-construction.png"),
+  servicesPlumbing: img("services-plumbing-overview.png"),
+  multiFamily: img("multi-family-plumbing.png"),
+  renovation: img("renovation-tenant-improvement.png"),
+  industrial: img("industrial-plumbing.png"),
+  aboutHero: img("about-hero-background.png"),
+  aerial: img("aerial-site-view.png"),
+  newConstruction: img("new-construction-plumbing.png"),
+  project1: img("project-drain-line-installation.jpg"),
+  project2: img("project-sewer-trench-commercial.jpg"),
+  project3: img("project-industrial-overhead-piping.jpg"),
+  project4: img("project-industrial-equipment-yard.jpg"),
+  project5: img("project-underground-sewer-new-construction.jpg"),
+  project6: img("project-underground-water-main.jpg"),
+  galleryDetail: img("gallery-detail.png"),
+  teamOnSite: img("team-on-site.png"),
+  finishPlumbing: img("finish-plumbing.png"),
 };

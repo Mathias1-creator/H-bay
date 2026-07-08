@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Clock, Shield, MapPin } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { submitLead } from '@/lib/submitLead';
 
 const TABS = [
   { id: 'contact', label: 'Contact Us', submit: 'Send Message' },
@@ -35,7 +35,7 @@ export default function GetInTouch() {
     e.preventDefault();
     setLoading(true);
     try {
-      await base44.entities.ContactSubmission.create({
+      await submitLead({
         full_name: form.name,
         email: form.email,
         phone: form.phone,

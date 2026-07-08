@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import { IMAGES } from '@/lib/images';
 
 const NAV_LINKS = [
   { label: 'Home', path: '/' },
@@ -50,7 +51,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center shrink-0 py-2">
               <img
-                src="https://media.base44.com/images/public/6a0104838014bf83659ef839/7002f38c9_logo.png"
+                src={IMAGES.logo}
                 alt="Heritage Bay Plumbing"
                 style={{ height: '72px', width: 'auto', mixBlendMode: 'screen' }}
               />

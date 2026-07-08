@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { submitLead } from '@/lib/submitLead';
 
 const SERVICE_OPTIONS = ['New Construction Plumbing', 'Renovation & Tenant Improvement', 'Industrial Plumbing'];
 const TIME_SLOTS = ['7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
@@ -60,7 +60,7 @@ export default function AppointmentBooking({ hideTitle = false }) {
     e.preventDefault();
     setLoading(true);
     try {
-      await base44.entities.ContactSubmission.create({
+      await submitLead({
         full_name: form.name,
         email: form.email,
         phone: form.phone,
