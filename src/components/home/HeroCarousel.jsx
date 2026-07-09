@@ -13,9 +13,7 @@ import { IMAGES } from '@/lib/images';
 const SLIDES = [
   { src: IMAGES.carouselLogo, alt: 'Heritage Bay Plumbing', logo: true },
   { src: IMAGES.carousel1, alt: 'Commercial mechanical and piping installation', position: 'object-center' },
-  { src: IMAGES.carousel2, alt: 'Plumber running pipe through wall framing', position: 'object-center' },
   { src: IMAGES.carousel3, alt: 'Rough-in drain and vent plumbing on a new build', position: 'object-center' },
-  { src: IMAGES.carousel4, alt: 'Overhead piping and mechanical rough-in', position: 'object-top' },
   { src: IMAGES.carousel5, alt: 'Underground water and sewer trench on a new construction site', position: 'object-center' },
 ];
 
