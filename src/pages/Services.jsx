@@ -52,12 +52,20 @@ export default function Services() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-heading text-white mb-4">Have a project scope ready? Lets talk.</h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
-            <a
-              href="tel:+18058726302"
-              className="text-amber text-2xl font-heading hover:text-amber-hover transition-colors"
-            >
-              (805) 872-6302
-            </a>
+            <div className="flex flex-col items-center gap-1">
+              <a
+                href="tel:+18058726302"
+                className="text-amber text-2xl font-heading hover:text-amber-hover transition-colors"
+              >
+                (805) 872-6302 <span className="text-base text-white/50">Office</span>
+              </a>
+              <a
+                href="tel:+18058726378"
+                className="text-amber text-2xl font-heading hover:text-amber-hover transition-colors"
+              >
+                (805) 872-6378 <span className="text-base text-white/50">Field</span>
+              </a>
+            </div>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center bg-amber hover:bg-amber-hover text-navy font-bold text-sm px-8 py-3.5 rounded transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] tracking-wide uppercase"

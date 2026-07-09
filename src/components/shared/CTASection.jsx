@@ -41,7 +41,14 @@ export default function CTASection() {
             className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-bold text-sm px-8 py-4 rounded transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] tracking-wide uppercase"
           >
             <Phone className="w-4 h-4" />
-            Call (805) 872-6302
+            Office (805) 872-6302
+          </a>
+          <a
+            href="tel:+18058726378"
+            className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-bold text-sm px-8 py-4 rounded transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] tracking-wide uppercase"
+          >
+            <Phone className="w-4 h-4" />
+            Field (805) 872-6378
           </a>
         </div>
         <p className="text-white/30 text-xs tracking-wide">

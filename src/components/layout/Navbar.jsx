@@ -76,16 +76,28 @@ export default function Navbar() {
 
             {/* CTA + Mobile Toggle */}
             <div className="flex items-center gap-3">
-              <a
-                href="tel:+18058726302"
-                className="hidden sm:flex items-center gap-2 bg-amber hover:bg-amber-hover text-navy font-bold text-sm px-5 py-2.5 rounded transition-all duration-200 hover:scale-[1.03] active:scale-[0.97]"
-              >
-                <Phone className="w-4 h-4" />
-                (805) 872-6302
-              </a>
+              <div className="hidden sm:flex flex-col gap-1.5">
+                <a
+                  href="tel:+18058726302"
+                  className="flex items-center gap-2 bg-amber hover:bg-amber-hover text-navy font-bold text-sm px-4 py-1.5 rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <Phone className="w-3.5 h-3.5 shrink-0" />
+                  (805) 872-6302
+                  <span className="text-[10px] font-semibold uppercase tracking-wide opacity-70">Office</span>
+                </a>
+                <a
+                  href="tel:+18058726378"
+                  className="flex items-center gap-2 bg-amber hover:bg-amber-hover text-navy font-bold text-sm px-4 py-1.5 rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <Phone className="w-3.5 h-3.5 shrink-0" />
+                  (805) 872-6378
+                  <span className="text-[10px] font-semibold uppercase tracking-wide opacity-70">Field</span>
+                </a>
+              </div>
               <a
                 href="tel:+18058726302"
                 className="sm:hidden flex items-center justify-center w-10 h-10 bg-amber rounded text-navy"
+                aria-label="Call the office"
               >
                 <Phone className="w-5 h-5" />
               </a>
@@ -122,7 +134,13 @@ export default function Navbar() {
               href="tel:+18058726302"
               className="block mt-3 text-center bg-amber hover:bg-amber-hover text-navy font-bold text-sm px-5 py-3 rounded transition-all"
             >
-              Call (805) 872-6302
+              Call Office · (805) 872-6302
+            </a>
+            <a
+              href="tel:+18058726378"
+              className="block mt-2 text-center bg-amber hover:bg-amber-hover text-navy font-bold text-sm px-5 py-3 rounded transition-all"
+            >
+              Call Field · (805) 872-6378
             </a>
           </div>
         </div>
