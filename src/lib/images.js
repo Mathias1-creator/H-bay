@@ -6,6 +6,8 @@ const img = (filename) => import.meta.env.BASE_URL + "images/" + filename;
 
 export const IMAGES = {
   logo: img("heritage-bay-logo.png"),
+  // Full-color badge logo — navbar (top-left) and footer, every page
+  logoColor: img("heritage-bay-logo-color.png"),
   // Homepage hero carousel — shown in this order (logo first, then job-site photos)
   carouselLogo: img("hero-carousel-logo.png"),
   carousel1: img("hero-carousel-1.jpg"),

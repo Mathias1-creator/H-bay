@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import { IMAGES } from '@/lib/images';
 
 const NAV_LINKS = [
   { label: 'Home', path: '/' },
@@ -47,6 +48,15 @@ export default function Navbar() {
       <div className="bg-navy/90 backdrop-blur-xl border-b-[3px] border-amber">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 md:h-24">
+            {/* Logo */}
+            <Link to="/" className="flex items-center shrink-0 py-2">
+              <img
+                src={IMAGES.logoColor}
+                alt="Heritage Bay Plumbing"
+                className="h-14 md:h-16 w-auto"
+              />
+            </Link>
+
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-8">
               {NAV_LINKS.map((link) => (
@@ -65,7 +75,7 @@ export default function Navbar() {
             </div>
 
             {/* CTA + Mobile Toggle */}
-            <div className="flex items-center gap-3 ml-auto">
+            <div className="flex items-center gap-3">
               <div className="hidden sm:flex flex-col gap-1.5">
                 <a
                   href="tel:+18058726302"

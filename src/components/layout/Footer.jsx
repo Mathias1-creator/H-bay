@@ -12,9 +12,9 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <img
-                src={IMAGES.logo}
+                src={IMAGES.logoColor}
                 alt="Heritage Bay Plumbing"
-                style={{ height: '56px', width: 'auto', mixBlendMode: 'screen' }}
+                className="h-14 w-auto"
               />
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-4">
