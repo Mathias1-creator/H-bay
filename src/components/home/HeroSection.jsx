@@ -7,10 +7,7 @@ import HeroCarousel from './HeroCarousel';
 export default function HeroSection() {
   return (
     <section className="relative">
-      {/* Spacer so the fixed navbar doesn't cover the first carousel slide */}
-      <div className="h-20 md:h-24 bg-navy" />
-
-      {/* Image carousel */}
+      {/* Full-screen image carousel (sits behind the translucent fixed navbar) */}
       <HeroCarousel />
 
       {/* Headline + CTA band */}

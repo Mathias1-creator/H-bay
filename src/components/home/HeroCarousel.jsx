@@ -28,25 +28,37 @@ export default function HeroCarousel() {
       className="relative w-full bg-navy"
       aria-label="Heritage Bay Plumbing project photos"
     >
-      <CarouselContent className="ml-0 h-[48vh] min-h-[320px] max-h-[560px] sm:h-[56vh]">
+      <CarouselContent className="ml-0 h-[100svh]">
         {SLIDES.map((slide, i) => (
           <CarouselItem key={i} className="pl-0 h-full basis-full">
             {slide.logo ? (
-              <div className="w-full h-full bg-navy flex items-center justify-center p-8 sm:p-14">
+              <div className="w-full h-full bg-navy flex items-center justify-center p-10 sm:p-16">
                 <img
                   src={slide.src}
                   alt={slide.alt}
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-[65%] max-w-[80%] sm:max-h-[70%] object-contain"
                   loading="eager"
                 />
               </div>
             ) : (
-              <img
-                src={slide.src}
-                alt={slide.alt}
-                className="w-full h-full object-cover"
-                loading={i <= 1 ? 'eager' : 'lazy'}
-              />
+              <div className="relative w-full h-full overflow-hidden bg-navy">
+                {/* Soft blurred fill of the same photo so the screen is full
+                    without cropping the real image */}
+                <img
+                  src={slide.src}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60"
+                />
+                <div className="absolute inset-0 bg-navy/30" />
+                {/* The full, uncropped photo, centered */}
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="relative z-10 w-full h-full object-contain"
+                  loading={i <= 1 ? 'eager' : 'lazy'}
+                />
+              </div>
             )}
           </CarouselItem>
         ))}
