@@ -19,7 +19,7 @@ function ContactCard({ icon: Icon, label, value, sublabel, href }) {
       </div>
       <div className="min-w-0">
         <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1.5">{label}</p>
-        <p className="text-white text-xl sm:text-2xl font-heading leading-tight group-hover:text-amber transition-colors break-words">
+        <p className="text-white text-lg sm:text-xl font-heading leading-tight group-hover:text-amber transition-colors break-words">
           {value}
         </p>
         {sublabel && <p className="text-white/40 text-sm mt-1.5">{sublabel}</p>}
@@ -41,19 +41,32 @@ export default function Contact() {
 
       <section className="bg-navy py-20 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-5 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
             <ContactCard
               icon={Phone}
-              label="Call Us"
+              label="Call — Office"
               value="(805) 872-6302"
-              sublabel="Primary Line"
+              sublabel="Office Line"
               href="tel:+18058726302"
+            />
+            <ContactCard
+              icon={Phone}
+              label="Call — Field"
+              value="(805) 872-6378"
+              sublabel="Field Line"
+              href="tel:+18058726378"
             />
             <ContactCard
               icon={Mail}
               label="Email Us"
               value={<>jmurray@<wbr />heritagebayplumbing.com</>}
               href="mailto:jmurray@heritagebayplumbing.com"
+            />
+            <ContactCard
+              icon={Mail}
+              label="Email Us"
+              value={<>amacri@<wbr />heritagebayplumbing.com</>}
+              href="mailto:amacri@heritagebayplumbing.com"
             />
           </div>
 
@@ -89,7 +102,7 @@ export default function Contact() {
       <section className="bg-onyx py-8">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <p className="text-white/60 text-sm">
-            Serving Central & Southern California — Monterey to Simi Valley and everywhere in between.
+            Serving Central & Southern California — Santa Cruz to Calabasas and everywhere in between.
           </p>
         </div>
       </section>

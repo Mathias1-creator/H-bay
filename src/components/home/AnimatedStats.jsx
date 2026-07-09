@@ -2,7 +2,6 @@ import React from 'react';
 import { useScrollAnimation, useCountUp } from '@/lib/useScrollAnimation';
 
 const STATS = [
-  { end: 30, suffix: '+', label: 'Years of Combined Experience' },
   { end: 3, suffix: '', label: 'Project Types: Commercial · Multi-Family · Industrial' },
   { end: 1, suffix: '', label: 'Standard: Union Quality' },
   { end: 100, suffix: '%', label: 'UA Trained Craftsmen' },
@@ -39,7 +38,7 @@ export default function AnimatedStats() {
         >
           The Numbers Behind the Work
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-8">
           {STATS.map((stat, i) => (
             <StatItem
               key={stat.label}

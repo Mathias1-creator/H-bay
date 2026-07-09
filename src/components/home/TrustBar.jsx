@@ -6,7 +6,7 @@ const TRUST_ITEMS = [
   { icon: Award, label: '30 Years of Experience' },
   { icon: Shield, label: 'UA Signatory Contractor' },
   { icon: Building2, label: 'Commercial · Multi-Family · Industrial' },
-  { icon: MapPin, label: 'Monterey to Simi Valley' },
+  { icon: MapPin, label: 'Santa Cruz to Calabasas' },
 ];
 
 export default function TrustBar() {

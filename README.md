@@ -45,12 +45,15 @@ that registry rather than hardcoding `/images/...` paths, so the site keeps
 working when hosted at a subpath (e.g. GitHub Pages project sites at
 `/<repo-name>/`).
 
+The homepage opens with an image carousel (`src/components/home/HeroCarousel.jsx`,
+built on the shadcn/embla carousel primitive). Its slides are the
+`hero-carousel-*` entries in the image registry — a logo panel first, then
+job-site photos.
+
 ## Contact
 
 The Contact page is intentionally just tap-to-call / tap-to-email cards plus
 hours and licensing info — there is no lead-capture form and no backend.
-(`src/lib/submitLead.js` is a leftover no-op stub from an earlier version of
-the page; nothing currently renders a form that calls it.)
 
 ## Deployment
 

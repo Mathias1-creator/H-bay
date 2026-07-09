@@ -18,7 +18,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Union Quality. Commercial Scale. Built to Last.
+              Old-School Work Ethic. New-School Technology.
             </p>
             <p className="text-amber text-sm font-semibold">
               UA Signatory Contractor · UA Local 403
@@ -47,11 +47,19 @@ export default function Footer() {
             <div className="space-y-4">
               <a href="tel:+18058726302" className="flex items-center gap-3 text-white/60 hover:text-amber transition-colors text-sm">
                 <Phone className="w-4 h-4 text-amber shrink-0" />
-                (805) 872-6302
+                (805) 872-6302 <span className="text-white/40">· Office</span>
+              </a>
+              <a href="tel:+18058726378" className="flex items-center gap-3 text-white/60 hover:text-amber transition-colors text-sm">
+                <Phone className="w-4 h-4 text-amber shrink-0" />
+                (805) 872-6378 <span className="text-white/40">· Field</span>
               </a>
               <a href="mailto:jmurray@heritagebayplumbing.com" className="flex items-center gap-3 text-white/60 hover:text-amber transition-colors text-sm break-all">
                 <Mail className="w-4 h-4 text-amber shrink-0" />
                 jmurray@heritagebayplumbing.com
+              </a>
+              <a href="mailto:amacri@heritagebayplumbing.com" className="flex items-center gap-3 text-white/60 hover:text-amber transition-colors text-sm break-all">
+                <Mail className="w-4 h-4 text-amber shrink-0" />
+                amacri@heritagebayplumbing.com
               </a>
               <div className="flex items-center gap-3 text-white/60 text-sm">
                 <Clock className="w-4 h-4 text-amber shrink-0" />

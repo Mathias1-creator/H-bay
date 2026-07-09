@@ -32,9 +32,9 @@ builder-hosted assets — everything lives in this repo).
 - Client-side routing: `BrowserRouter` is given
   `basename={import.meta.env.BASE_URL}` in `src/App.jsx` for the same
   subpath reason. Keep this if you touch routing.
-- Contact/appointment forms submit through `src/lib/submitLead.js`, which is
-  currently a no-op logger — there is no backend. See the README section
-  "Contact forms" before changing this.
+- There is no backend. The Contact page is tap-to-call / tap-to-email only —
+  no lead-capture form. Don't add one that posts somewhere without discussing
+  it first.
 - There is no authentication anywhere in this app. Don't reintroduce a login
   gate without discussing it first — this is a public marketing site.
 

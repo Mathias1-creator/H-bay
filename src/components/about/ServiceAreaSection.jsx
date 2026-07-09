@@ -3,8 +3,8 @@ import { useScrollAnimation } from '@/lib/useScrollAnimation';
 import { MapPin } from 'lucide-react';
 
 const CITIES = [
-  'Monterey', 'Santa Cruz', 'San Jose', 'Salinas', 'San Luis Obispo',
-  'Santa Barbara', 'Ventura', 'Los Angeles', 'Simi Valley',
+  'Santa Cruz', 'Monterey', 'San Jose', 'Salinas', 'San Luis Obispo',
+  'Santa Barbara', 'Ventura', 'Los Angeles', 'Simi Valley', 'Calabasas',
 ];
 
 export default function ServiceAreaSection() {
@@ -16,7 +16,7 @@ export default function ServiceAreaSection() {
         <div className={`text-center mb-12 transition-all duration-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <h2 className="text-3xl sm:text-4xl font-heading text-navy mb-4">Serving Central & Southern California</h2>
           <p className="text-charcoal/60 text-lg">
-            Heritage Bay Plumbing serves clients from Monterey to Simi Valley and everywhere in between.
+            Heritage Bay Plumbing serves clients from Santa Cruz to Calabasas and everywhere in between.
           </p>
         </div>
 

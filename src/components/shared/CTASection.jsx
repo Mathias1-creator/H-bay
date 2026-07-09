@@ -22,7 +22,7 @@ export default function CTASection() {
           }`}
           style={{ transitionDelay: isVisible ? '100ms' : '0ms' }}
         >
-          Heritage Bay Plumbing serves commercial, multi-family, and industrial clients from Monterey to Simi Valley. Let's build something great.
+          Heritage Bay Plumbing serves commercial, multi-family, and industrial clients from Santa Cruz to Calabasas. Let's build something great.
         </p>
         <div
           className={`flex flex-col sm:flex-row gap-4 justify-center mb-8 transition-all duration-600 ${

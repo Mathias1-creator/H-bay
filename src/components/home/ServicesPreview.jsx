@@ -16,8 +16,8 @@ const SERVICES = [
   },
   {
     icon: Factory,
-    title: 'Industrial Plumbing',
-    description: 'Heavy-duty plumbing solutions for industrial facilities built to code and designed for long-term performance.',
+    title: 'Industrial Piping',
+    description: 'Heavy-duty industrial piping solutions for manufacturing and processing facilities, built to code and designed for long-term performance.',
   },
 ];
 

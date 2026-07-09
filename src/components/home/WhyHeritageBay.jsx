@@ -10,7 +10,7 @@ const REASONS = [
   },
   {
     icon: Lightbulb,
-    title: 'Old School Ethics. New Age Technology.',
+    title: 'Old-School Work Ethic. New-School Technology.',
     description: '30 years of hands-on experience combined with the latest plumbing technologies and installation methods. We bring the best of both worlds to every job site.',
   },
   {

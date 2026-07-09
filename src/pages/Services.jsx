@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import ServiceDetail from '@/components/services/ServiceDetail';
 import { IMAGES } from '@/lib/images';
@@ -19,10 +18,10 @@ const SERVICES_DATA = [
     imageAlt: 'CLIENT PHOTO SLOT — Commercial renovation plumbing',
   },
   {
-    title: 'Industrial Plumbing',
-    description: "Industrial plumbing demands a different level of expertise, and Heritage Bay delivers. Our team has the experience and training to handle heavy-duty plumbing systems for manufacturing facilities, warehouses, processing plants, and other industrial applications. We design and install systems built for the demands of industrial use: durable, code-compliant, and engineered for long-term performance.",
+    title: 'Industrial Piping',
+    description: "Industrial piping demands a different level of expertise, and Heritage Bay delivers. Our team has the experience and training to handle heavy-duty piping systems for manufacturing facilities, warehouses, processing plants, and other industrial applications. We design and install systems built for the demands of industrial use: durable, code-compliant, and engineered for long-term performance.",
     image: IMAGES.industrial,
-    imageAlt: 'CLIENT PHOTO SLOT — Industrial facility plumbing',
+    imageAlt: 'Industrial facility piping',
   },
 ];
 

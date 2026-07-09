@@ -2,41 +2,36 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { IMAGES } from '@/lib/images';
+import HeroCarousel from './HeroCarousel';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src={IMAGES.hero}
-          alt="Commercial plumbing construction site"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/60 to-navy/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-onyx/50 via-transparent to-transparent" />
-      </div>
+    <section className="relative">
+      {/* Spacer so the fixed navbar doesn't cover the first carousel slide */}
+      <div className="h-20 md:h-24 bg-navy" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
-        <div className="max-w-3xl">
+      {/* Image carousel */}
+      <HeroCarousel />
+
+      {/* Headline + CTA band */}
+      <div className="bg-gradient-to-b from-navy to-onyx">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="inline-block mb-6"
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded text-xs sm:text-sm font-semibold text-amber tracking-wider uppercase">
-              UA Signatory Contractor · 30 Years Experience · Launching May 2026
+              UA Signatory Contractor · 30 Years Experience
             </span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-heading text-white leading-[1.1] mb-6"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-heading text-white leading-[1.1] mb-5"
           >
             COMMERCIAL PLUMBING BUILT TO PERFORM
           </motion.h1>
@@ -44,17 +39,26 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-lg sm:text-xl text-white/80 font-body font-medium mb-10 leading-relaxed"
+            transition={{ duration: 0.6, delay: 0.32 }}
+            className="text-xl sm:text-2xl font-heading text-amber mb-6"
           >
-            New Construction · Renovation · Multi-Family · Commercial · Industrial · Monterey to Simi Valley
+            Old-School Work Ethic. New-School Technology.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.44 }}
+            className="text-base sm:text-lg text-white/70 font-body font-medium mb-10 leading-relaxed"
+          >
+            New Construction · Renovation · Multi-Family · Commercial · Industrial · Santa Cruz to Calabasas
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.65 }}
-            className="flex flex-col sm:flex-row gap-4 mb-8"
+            transition={{ duration: 0.6, delay: 0.56 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
           >
             <Link
               to="/contact"
@@ -74,7 +78,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
             className="text-white/40 text-xs sm:text-sm font-medium tracking-wide"
           >
             Proud UA Signatory Contractor · UA Local 403 · San Luis Obispo, CA

@@ -6,7 +6,13 @@ const img = (filename) => import.meta.env.BASE_URL + "images/" + filename;
 
 export const IMAGES = {
   logo: img("heritage-bay-logo.png"),
-  hero: img("hero-commercial-plumbing-construction.png"),
+  // Homepage hero carousel — shown in this order (logo first, then job-site photos)
+  carouselLogo: img("hero-carousel-logo.png"),
+  carousel1: img("hero-carousel-1.jpg"),
+  carousel2: img("hero-carousel-2.jpg"),
+  carousel3: img("hero-carousel-3.jpg"),
+  carousel4: img("hero-carousel-4.jpg"),
+  carousel5: img("hero-carousel-5.jpg"),
   servicesPlumbing: img("services-plumbing-overview.png"),
   multiFamily: img("multi-family-plumbing.png"),
   renovation: img("renovation-tenant-improvement.png"),
