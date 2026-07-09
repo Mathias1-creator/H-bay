@@ -25,6 +25,7 @@ export default function HeroCarousel() {
   const [api, setApi] = React.useState(null);
   const [selected, setSelected] = React.useState(0);
   const [count, setCount] = React.useState(SLIDES.length);
+  const [paused, setPaused] = React.useState(false);
 
   React.useEffect(() => {
     if (!api) return;
@@ -35,8 +36,20 @@ export default function HeroCarousel() {
     return () => api.off('select', onSelect);
   }, [api]);
 
+  // Auto-advance every 5s; pause on hover, and reset the timer whenever the
+  // slide changes (so manual arrow/dot clicks don't cause a quick double-jump).
+  React.useEffect(() => {
+    if (!api || paused) return;
+    const id = setInterval(() => api.scrollNext(), 5000);
+    return () => clearInterval(id);
+  }, [api, paused, selected]);
+
   return (
-    <div className="relative bg-navy">
+    <div
+      className="relative bg-navy"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <Carousel
         opts={{ loop: true }}
         setApi={setApi}
