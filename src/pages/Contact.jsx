@@ -91,7 +91,7 @@ export default function Contact() {
                 <Shield className="w-5 h-5 text-amber" />
               </div>
               <p className="text-amber text-sm font-semibold leading-snug">
-                UA Signatory · UA Local 403 · Licensed & Insured
+                UA Signatory · UA Local 403 · Licensed, Insured & Bonded
               </p>
             </div>
           </div>

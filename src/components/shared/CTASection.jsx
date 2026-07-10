@@ -52,7 +52,7 @@ export default function CTASection() {
           </a>
         </div>
         <p className="text-white/30 text-xs tracking-wide">
-          UA Signatory Contractor · UA Local 403 · Licensed · Insured
+          UA Signatory Contractor · UA Local 403 · Licensed · Insured · Bonded
         </p>
       </div>
     </section>
