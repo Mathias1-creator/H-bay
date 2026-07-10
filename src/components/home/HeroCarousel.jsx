@@ -21,17 +21,19 @@ const SLIDES = [
 export default function HeroCarousel() {
   const [api, setApi] = React.useState(null);
   const [selected, setSelected] = React.useState(0);
+  const [count, setCount] = React.useState(SLIDES.length);
 
   React.useEffect(() => {
     if (!api) return;
+    setCount(api.scrollSnapList().length);
     setSelected(api.selectedScrollSnap());
     const onSelect = () => setSelected(api.selectedScrollSnap());
     api.on('select', onSelect);
     return () => api.off('select', onSelect);
   }, [api]);
 
-  // Auto-advance every 4s — no manual controls (no arrows, no dots); this is
-  // a purely passive, automatic slideshow.
+  // Auto-advance every 4s — no arrows, and the dots below are a display-only
+  // progress indicator (not buttons): this stays a purely automatic slideshow.
   React.useEffect(() => {
     if (!api) return;
     const id = setInterval(() => api.scrollNext(), 4000);
@@ -69,6 +71,19 @@ export default function HeroCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
+
+        {/* Display-only progress dots — not clickable, matches the current slide */}
+        <div className="absolute inset-x-0 bottom-6 z-30 flex justify-center gap-2.5">
+          {Array.from({ length: count }).map((_, i) => (
+            <span
+              key={i}
+              aria-hidden="true"
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                selected === i ? 'w-7 bg-amber' : 'w-2.5 bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
       </Carousel>
     </div>
   );
