@@ -46,7 +46,7 @@ export default function HeroCarousel() {
         className="relative w-full"
         aria-label="Heritage Bay Plumbing project photos"
       >
-        <CarouselContent className="ml-0 h-[calc(100svh-5rem)] md:h-[calc(100svh-6rem)]">
+        <CarouselContent className="ml-0 aspect-video md:aspect-auto md:h-[calc(100svh-6rem)]">
           {SLIDES.map((slide, i) => (
             <CarouselItem key={i} className="pl-0 h-full basis-full">
               {slide.logo ? (
