@@ -3,8 +3,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
 } from '@/components/ui/carousel';
 import { IMAGES } from '@/lib/images';
 
@@ -15,28 +13,25 @@ const SLIDES = [
   { src: IMAGES.carousel1, alt: 'Commercial mechanical and piping installation', position: 'object-center' },
   { src: IMAGES.carousel3, alt: 'Rough-in drain and vent plumbing on a new build', position: 'object-center' },
   { src: IMAGES.carousel5, alt: 'Underground water and sewer trench on a new construction site', position: 'object-center' },
+  { src: IMAGES.carousel6, alt: 'Commercial building exterior with exposed conduit and piping run', position: 'object-center' },
+  { src: IMAGES.carousel7, alt: 'Overhead commercial mechanical and electrical piping', position: 'object-center' },
+  { src: IMAGES.carousel8, alt: 'Heritage Bay Plumbing service trucks', position: 'object-center' },
 ];
-
-const arrowClasses =
-  'h-11 w-11 sm:h-12 sm:w-12 rounded-full border-0 bg-navy/50 text-white ' +
-  'hover:bg-amber hover:text-navy backdrop-blur-sm z-30';
 
 export default function HeroCarousel() {
   const [api, setApi] = React.useState(null);
   const [selected, setSelected] = React.useState(0);
-  const [count, setCount] = React.useState(SLIDES.length);
 
   React.useEffect(() => {
     if (!api) return;
-    setCount(api.scrollSnapList().length);
     setSelected(api.selectedScrollSnap());
     const onSelect = () => setSelected(api.selectedScrollSnap());
     api.on('select', onSelect);
     return () => api.off('select', onSelect);
   }, [api]);
 
-  // Auto-advance every 4s; resets whenever the slide changes (so a manual
-  // arrow/dot click doesn't cause a quick extra jump right after).
+  // Auto-advance every 4s — no manual controls (no arrows, no dots); this is
+  // a purely passive, automatic slideshow.
   React.useEffect(() => {
     if (!api) return;
     const id = setInterval(() => api.scrollNext(), 4000);
@@ -74,24 +69,6 @@ export default function HeroCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-
-        <CarouselPrevious className={`left-3 sm:left-6 ${arrowClasses}`} />
-        <CarouselNext className={`right-3 sm:right-6 ${arrowClasses}`} />
-
-        {/* Dot indicators */}
-        <div className="absolute inset-x-0 bottom-6 z-30 flex justify-center gap-2.5">
-          {Array.from({ length: count }).map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => api?.scrollTo(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                selected === i ? 'w-7 bg-amber' : 'w-2.5 bg-white/50 hover:bg-white/80'
-              }`}
-            />
-          ))}
-        </div>
       </Carousel>
     </div>
   );
