@@ -47,23 +47,12 @@ function AboutContent() {
 
   return (
     <section ref={ref} className="bg-offwhite py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl sm:text-4xl font-heading text-navy mb-6">About Heritage Bay Plumbing</h2>
-            <p className="text-charcoal/70 text-base leading-relaxed">
-              Heritage Bay Plumbing Inc. is a licensed, union plumbing construction company founded by Jared Murray. While the Heritage Bay name is new, the experience behind it is not. With over 30 years of UA union-trained expertise, Jared and his team pair an old-school work ethic with new-school technology on every commercial, multi-family, and industrial project they take on. Heritage Bay is a proud UA Signatory Contractor affiliated with UA Plumbing Local 403 out of San Luis Obispo, CA, meaning every project is completed to the highest union standards in the industry. Serving clients from Santa Cruz to Calabasas, Heritage Bay is built for the scale and complexity of commercial plumbing construction.
-            </p>
-          </div>
-          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: isVisible ? '200ms' : '0ms' }}>
-            <div className="rounded-lg overflow-hidden shadow-2xl">
-              <img
-                src={IMAGES.teamOnSite}
-                alt="CLIENT PHOTO SLOT — Jared or team on job site"
-                className="w-full h-[350px] sm:h-[450px] object-cover"
-              />
-            </div>
-          </div>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 className="text-3xl sm:text-4xl font-heading text-navy mb-6">About Heritage Bay Plumbing</h2>
+          <p className="text-charcoal/70 text-base leading-relaxed">
+            Heritage Bay Plumbing Inc. is a licensed, union plumbing construction company founded by Jared Murray. While the Heritage Bay name is new, the experience behind it is not. With over 30 years of UA union-trained expertise, Jared and his team pair an old-school work ethic with new-school technology on every commercial, multi-family, and industrial project they take on. Heritage Bay is a proud UA Signatory Contractor affiliated with UA Plumbing Local 403 out of San Luis Obispo, CA, meaning every project is completed to the highest union standards in the industry. Serving clients from Santa Cruz to Calabasas, Heritage Bay is built for the scale and complexity of commercial plumbing construction.
+          </p>
         </div>
       </div>
     </section>

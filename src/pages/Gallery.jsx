@@ -11,6 +11,10 @@ const GALLERY_ITEMS = [
   { image: IMAGES.project2, caption: 'Sewer Trench — Commercial Build' },
   { image: IMAGES.project3, caption: 'Industrial Mechanical — Overhead Piping' },
   { image: IMAGES.project4, caption: 'Industrial Mechanical — Equipment Yard' },
+  { image: IMAGES.project7, caption: 'Exterior Piping Run — Commercial Building' },
+  { image: IMAGES.project8, caption: 'Exterior Piping Installation — Crew On-Site' },
+  { image: IMAGES.project9, caption: 'Emergency Eyewash Station — Industrial Facility' },
+  { image: IMAGES.project10, caption: 'Tenant Improvement — Commercial Office Build-Out' },
 ];
 
 function GalleryImage({ item, index }) {

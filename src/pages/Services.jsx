@@ -7,7 +7,7 @@ import { IMAGES } from '@/lib/images';
 const SERVICES_DATA = [
   {
     title: 'New Construction Plumbing',
-    description: 'Heritage Bay Plumbing specializes in complete plumbing system installations for new construction projects. With over 30 years of combined UA union experience, we provide expert layout, rough-in, and finish plumbing for commercial buildings, multi-family residential complexes, and industrial facilities. Every installation is designed for long-term performance and built to code from the ground up. We work closely with general contractors, project managers, and owners to keep projects on schedule and on budget, from pre-construction planning through final inspection.',
+    description: 'Heritage Bay Plumbing specializes in complete plumbing system installations for new construction projects. With over 30 years of UA union experience, we provide expert layout, rough-in, and finish plumbing for commercial buildings, multi-family residential complexes, and industrial facilities. Every installation is designed for long-term performance and built to code from the ground up. We work closely with general contractors, project managers, and owners to keep projects on schedule and on budget, from pre-construction planning through final inspection.',
     image: IMAGES.newConstruction,
     imageAlt: 'CLIENT PHOTO SLOT — New construction plumbing rough-in',
   },

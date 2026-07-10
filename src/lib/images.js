@@ -29,7 +29,10 @@ export const IMAGES = {
   project4: img("project-industrial-equipment-yard.jpg"),
   project5: img("project-underground-sewer-new-construction.jpg"),
   project6: img("project-underground-water-main.jpg"),
+  project7: img("project-exterior-piping-run.jpg"),
+  project8: img("project-crew-exterior-installation.jpg"),
+  project9: img("project-eyewash-station-industrial.jpg"),
+  project10: img("project-tenant-improvement-office.jpg"),
   galleryDetail: img("gallery-detail.png"),
-  teamOnSite: img("team-on-site.png"),
   finishPlumbing: img("finish-plumbing.png"),
 };
