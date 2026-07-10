@@ -59,24 +59,12 @@ export default function HeroCarousel() {
                   />
                 </div>
               ) : (
-                <div className="relative w-full h-full bg-navy overflow-hidden">
-                  {/* Blurred, scaled-up backdrop so the frame still reads as full-bleed */}
-                  <img
-                    src={slide.src}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40"
-                    loading={i <= 1 ? 'eager' : 'lazy'}
-                  />
-                  <div className="absolute inset-0 bg-navy/40" />
-                  {/* Full, uncropped photo on top */}
-                  <img
-                    src={slide.src}
-                    alt={slide.alt}
-                    className="relative z-10 w-full h-full object-contain"
-                    loading={i <= 1 ? 'eager' : 'lazy'}
-                  />
-                </div>
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="w-full h-full object-cover"
+                  loading={i <= 1 ? 'eager' : 'lazy'}
+                />
               )}
             </CarouselItem>
           ))}

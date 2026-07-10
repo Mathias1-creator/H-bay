@@ -54,12 +54,6 @@ export default function Gallery() {
               <GalleryImage key={i} item={item} index={i} />
             ))}
           </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-charcoal/50 text-sm italic mb-2">
-              More project photos coming soon as Heritage Bay grows its portfolio.
-            </p>
-          </div>
         </div>
       </section>
 
