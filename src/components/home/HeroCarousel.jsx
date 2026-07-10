@@ -6,16 +6,14 @@ import {
 } from '@/components/ui/carousel';
 import { IMAGES } from '@/lib/images';
 
-// position = object-position used when the (mostly vertical) photos are
-// cropped to fill the full-width banner.
 const SLIDES = [
   { src: IMAGES.carouselLogo, alt: 'Heritage Bay Plumbing', logo: true },
-  { src: IMAGES.carousel1, alt: 'Commercial mechanical and piping installation', position: 'object-center' },
-  { src: IMAGES.carousel3, alt: 'Rough-in drain and vent plumbing on a new build', position: 'object-center' },
-  { src: IMAGES.carousel5, alt: 'Underground water and sewer trench on a new construction site', position: 'object-center' },
-  { src: IMAGES.carousel6, alt: 'Commercial building exterior with exposed conduit and piping run', position: 'object-center' },
-  { src: IMAGES.carousel7, alt: 'Overhead commercial mechanical and electrical piping', position: 'object-center' },
-  { src: IMAGES.carousel8, alt: 'Heritage Bay Plumbing service trucks', position: 'object-center' },
+  { src: IMAGES.carousel1, alt: 'Commercial mechanical and piping installation' },
+  { src: IMAGES.carousel3, alt: 'Rough-in drain and vent plumbing on a new build' },
+  { src: IMAGES.carousel5, alt: 'Underground water and sewer trench on a new construction site' },
+  { src: IMAGES.carousel6, alt: 'Commercial building exterior with exposed conduit and piping run' },
+  { src: IMAGES.carousel7, alt: 'Overhead commercial mechanical and electrical piping' },
+  { src: IMAGES.carousel8, alt: 'Heritage Bay Plumbing service trucks' },
 ];
 
 export default function HeroCarousel() {
@@ -61,12 +59,24 @@ export default function HeroCarousel() {
                   />
                 </div>
               ) : (
-                <img
-                  src={slide.src}
-                  alt={slide.alt}
-                  className={`w-full h-full object-cover ${slide.position}`}
-                  loading={i <= 1 ? 'eager' : 'lazy'}
-                />
+                <div className="relative w-full h-full bg-navy overflow-hidden">
+                  {/* Blurred, scaled-up backdrop so the frame still reads as full-bleed */}
+                  <img
+                    src={slide.src}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40"
+                    loading={i <= 1 ? 'eager' : 'lazy'}
+                  />
+                  <div className="absolute inset-0 bg-navy/40" />
+                  {/* Full, uncropped photo on top */}
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    className="relative z-10 w-full h-full object-contain"
+                    loading={i <= 1 ? 'eager' : 'lazy'}
+                  />
+                </div>
               )}
             </CarouselItem>
           ))}
