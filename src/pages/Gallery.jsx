@@ -15,6 +15,12 @@ const GALLERY_ITEMS = [
   { image: IMAGES.project8, caption: 'Exterior Piping Installation — Crew On-Site' },
   { image: IMAGES.project9, caption: 'Emergency Eyewash Station — Industrial Facility' },
   { image: IMAGES.project10, caption: 'Tenant Improvement — Commercial Office Build-Out' },
+  { image: IMAGES.carousel1, caption: 'Mechanical Equipment Platform — Commercial Install' },
+  { image: IMAGES.carousel3, caption: 'Rough-In Framing — Drain & Vent Plumbing' },
+  { image: IMAGES.carousel5, caption: 'Utility Trench — New Construction Site' },
+  { image: IMAGES.carousel6, caption: 'Exterior Wall Piping — Commercial Building' },
+  { image: IMAGES.carousel7, caption: 'Overhead Piping Run — Ceiling Install' },
+  { image: IMAGES.carousel8, caption: 'Heritage Bay Plumbing Service Trucks' },
 ];
 
 function GalleryImage({ item, index }) {
