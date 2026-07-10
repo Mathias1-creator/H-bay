@@ -9,11 +9,11 @@ import { IMAGES } from '@/lib/images';
 const SLIDES = [
   { src: IMAGES.carouselLogo, alt: 'Heritage Bay Plumbing', logo: true },
   { src: IMAGES.carousel1, alt: 'Commercial mechanical and piping installation' },
-  { src: IMAGES.carousel3, alt: 'Rough-in drain and vent plumbing on a new build' },
-  { src: IMAGES.carousel5, alt: 'Underground water and sewer trench on a new construction site' },
+  { src: IMAGES.carousel8, alt: 'Heritage Bay Plumbing service trucks' },
   { src: IMAGES.carousel6, alt: 'Commercial building exterior with exposed conduit and piping run' },
   { src: IMAGES.carousel7, alt: 'Overhead commercial mechanical and electrical piping' },
-  { src: IMAGES.carousel8, alt: 'Heritage Bay Plumbing service trucks' },
+  { src: IMAGES.carousel3, alt: 'Rough-in drain and vent plumbing on a new build' },
+  { src: IMAGES.carousel5, alt: 'Underground water and sewer trench on a new construction site' },
 ];
 
 export default function HeroCarousel() {
