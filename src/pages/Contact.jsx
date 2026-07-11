@@ -3,7 +3,7 @@ import { Phone, Mail, Clock, Shield } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import { useScrollAnimation } from '@/lib/useScrollAnimation';
 
-function ContactCard({ icon: Icon, label, value, sublabel, href }) {
+function ContactCard({ icon: Icon, label, value, sublabel, href, className = '' }) {
   const [ref, isVisible] = useScrollAnimation(0.2);
 
   return (
@@ -12,14 +12,14 @@ function ContactCard({ icon: Icon, label, value, sublabel, href }) {
       href={href}
       className={`group flex items-center gap-5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber/50 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      } ${className}`}
     >
       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber/20 group-hover:scale-105 transition-all duration-300">
         <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-amber" />
       </div>
       <div className="min-w-0">
         <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1.5">{label}</p>
-        <p className="text-white text-xs lg:text-base font-heading leading-tight group-hover:text-amber transition-colors truncate">
+        <p className="text-white text-sm sm:text-base font-heading leading-tight group-hover:text-amber transition-colors truncate">
           {value}
         </p>
         {sublabel && <p className="text-white/40 text-sm mt-1.5">{sublabel}</p>}
@@ -61,12 +61,14 @@ export default function Contact() {
               label="Email Us"
               value="jmurray@heritagebayplumbing.com"
               href="mailto:jmurray@heritagebayplumbing.com"
+              className="md:col-span-2"
             />
             <ContactCard
               icon={Mail}
               label="Email Us"
               value="amacri@heritagebayplumbing.com"
               href="mailto:amacri@heritagebayplumbing.com"
+              className="md:col-span-2"
             />
           </div>
 
