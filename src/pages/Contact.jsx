@@ -19,7 +19,7 @@ function ContactCard({ icon: Icon, label, value, sublabel, href }) {
       </div>
       <div className="min-w-0">
         <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1.5">{label}</p>
-        <p className="text-white text-lg sm:text-xl font-heading leading-tight group-hover:text-amber transition-colors break-words">
+        <p className="text-white text-xs sm:text-base font-heading leading-tight group-hover:text-amber transition-colors truncate">
           {value}
         </p>
         {sublabel && <p className="text-white/40 text-sm mt-1.5">{sublabel}</p>}
@@ -59,13 +59,13 @@ export default function Contact() {
             <ContactCard
               icon={Mail}
               label="Email Us"
-              value={<>jmurray@<wbr />heritagebayplumbing.com</>}
+              value="jmurray@heritagebayplumbing.com"
               href="mailto:jmurray@heritagebayplumbing.com"
             />
             <ContactCard
               icon={Mail}
               label="Email Us"
-              value={<>amacri@<wbr />heritagebayplumbing.com</>}
+              value="amacri@heritagebayplumbing.com"
               href="mailto:amacri@heritagebayplumbing.com"
             />
           </div>
