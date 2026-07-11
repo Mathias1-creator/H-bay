@@ -10,7 +10,7 @@ function ContactCard({ icon: Icon, label, value, sublabel, href }) {
     <a
       ref={ref}
       href={href}
-      className={`group flex items-center gap-5 min-w-0 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber/50 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 ${
+      className={`group flex items-center gap-4 min-w-0 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber/50 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
@@ -19,7 +19,7 @@ function ContactCard({ icon: Icon, label, value, sublabel, href }) {
       </div>
       <div className="min-w-0">
         <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1.5">{label}</p>
-        <p className="text-white text-[10px] font-heading leading-tight group-hover:text-amber transition-colors truncate">
+        <p className="text-white text-[10.3px] font-heading leading-tight group-hover:text-amber transition-colors truncate">
           {value}
         </p>
         {sublabel && <p className="text-white/40 text-sm mt-1.5">{sublabel}</p>}
