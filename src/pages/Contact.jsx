@@ -19,7 +19,7 @@ function ContactCard({ icon: Icon, label, value, sublabel, href }) {
       </div>
       <div className="min-w-0">
         <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1.5">{label}</p>
-        <p className="text-white text-xs sm:text-base font-heading leading-tight group-hover:text-amber transition-colors truncate">
+        <p className="text-white text-xs lg:text-base font-heading leading-tight group-hover:text-amber transition-colors truncate">
           {value}
         </p>
         {sublabel && <p className="text-white/40 text-sm mt-1.5">{sublabel}</p>}
@@ -41,7 +41,7 @@ export default function Contact() {
 
       <section className="bg-navy py-20 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
             <ContactCard
               icon={Phone}
               label="Call — Office"
