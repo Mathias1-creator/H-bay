@@ -12,7 +12,6 @@ export const IMAGES = {
   carouselLogo: img("hero-carousel-logo.png"),
   carousel1: img("hero-carousel-1.jpg"),
   carousel3: img("hero-carousel-3.jpg"),
-  carousel5: img("hero-carousel-5.jpg"),
   carousel6: img("hero-carousel-6.jpg"),
   carousel7: img("hero-carousel-7.jpg"),
   carousel8: img("hero-carousel-8.jpg"),

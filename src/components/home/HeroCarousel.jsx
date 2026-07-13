@@ -12,7 +12,6 @@ const SLIDES = [
   { src: IMAGES.carousel8, alt: 'Heritage Bay Plumbing service trucks' },
   { src: IMAGES.carousel6, alt: 'Commercial building exterior with exposed conduit and piping run' },
   { src: IMAGES.carousel7, alt: 'Overhead commercial mechanical and electrical piping' },
-  { src: IMAGES.carousel5, alt: 'Underground water and sewer trench on a new construction site' },
   { src: IMAGES.carousel3, alt: 'Rough-in drain and vent plumbing on a new build' },
 ];
 
