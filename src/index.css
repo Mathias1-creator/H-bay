@@ -116,3 +116,12 @@
   background: #1B2B4B;
   border-radius: 4px;
 }
+
+/* Suppresses Microsoft Edge's "Visual Search" hover icon on photos — Edge
+   only shows it when it can hit-test an <img> directly under the cursor, so
+   making images non-interactive to the pointer stops it from appearing.
+   Any image that needs to be clickable is wrapped in a link/button, and
+   clicks still pass through to that ancestor. */
+img {
+  pointer-events: none;
+}
