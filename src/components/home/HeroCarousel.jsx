@@ -8,6 +8,7 @@ import { IMAGES } from '@/lib/images';
 
 const SLIDES = [
   { src: IMAGES.carouselLogo, alt: 'Heritage Bay Plumbing', logo: true },
+  { src: IMAGES.carousel9, alt: 'Commercial foundation and footing layout under construction' },
   { src: IMAGES.carousel1, alt: 'Commercial mechanical and piping installation' },
   { src: IMAGES.carousel8, alt: 'Heritage Bay Plumbing service trucks' },
   { src: IMAGES.carousel6, alt: 'Commercial building exterior with exposed conduit and piping run' },

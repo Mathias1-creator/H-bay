@@ -15,6 +15,7 @@ export const IMAGES = {
   carousel6: img("hero-carousel-6.jpg"),
   carousel7: img("hero-carousel-7.jpg"),
   carousel8: img("hero-carousel-8.jpg"),
+  carousel9: img("hero-carousel-9.jpg"),
   servicesPlumbing: img("services-plumbing-overview.png"),
   multiFamily: img("multi-family-plumbing.png"),
   renovation: img("renovation-tenant-improvement.png"),
@@ -32,6 +33,7 @@ export const IMAGES = {
   project8: img("project-crew-exterior-installation.jpg"),
   project9: img("project-eyewash-station-industrial.jpg"),
   project10: img("project-tenant-improvement-office.jpg"),
+  project11: img("project-foundation-excavation-commercial.jpg"),
   galleryDetail: img("gallery-detail.png"),
   finishPlumbing: img("finish-plumbing.png"),
 };
